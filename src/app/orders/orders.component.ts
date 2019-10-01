@@ -26,8 +26,4 @@ export class OrdersComponent implements OnInit {
       this.orders = data.data;
     });
   }
-
-  onSelect(order: Order): void {
-    this.selectedOrder = order;
-  }
 }

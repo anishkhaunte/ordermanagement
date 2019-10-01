@@ -1,0 +1,15 @@
+<div>
+  <h2>Add Order</h2>
+  <div>
+    <label>Customer Name:
+      <input [(ngModel)]="orderData.customer" placeholder="Customer Name"/>
+    </label><br>
+    <label>Desc:
+      <input [(ngModel)]="orderData.description" placeholder="Description"/>
+    </label><br>
+    <label>Price:
+      <input [(ngModel)]="orderData.price" placeholder="Price"/>
+    </label><br>
+  </div>
+  <button (click)="addOrder()">Save</button>
+</div>
