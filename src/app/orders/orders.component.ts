@@ -26,4 +26,16 @@ export class OrdersComponent implements OnInit {
       this.orders = data.data;
     });
   }
+
+  add() {
+    this.router.navigate(['/order-add']);
+  }
+
+  cancelOrder(id){
+    this.rest.cancelOrder(id).subscribe(res=>{
+      this.getOrders();
+    }, (err)=>{
+      console.log(err);
+    })
+  }
 }

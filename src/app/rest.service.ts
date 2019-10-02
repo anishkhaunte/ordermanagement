@@ -32,6 +32,10 @@ export class RestService {
       map(this.extractData));
   }
 
+  cancelOrder(id): Observable<any>{
+    return this.http.post(endpoint +'orders', id).pipe();
+  }
+
   addOrder (order): Observable<any> {
     console.log(order);
     return this.http.post<any>(endpoint + 'orders', JSON.stringify(order), httpOptions).pipe(
