@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./order-add.component.css']
 })
 export class OrderAddComponent implements OnInit {
- 
+  order: any
   @Input() orderData = { customer:'', description: '', price: 0 };
 
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
@@ -18,7 +18,8 @@ export class OrderAddComponent implements OnInit {
 
   addOrder() {
     this.rest.addOrder(this.orderData).subscribe((result) => {
-      this.router.navigate(['/order-details/'+result._id]);
+      this.order = result['order']
+      this.router.navigate(['/order-detail/'+this.order._id]);
     }, (err) => {
       console.log(err);
     });

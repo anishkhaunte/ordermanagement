@@ -15,7 +15,7 @@ export class OrderDetailComponent implements OnInit {
     this.rest.getOrder(this.route.snapshot.params['id']).subscribe((data: {}) => {
       console.log("The detail data");
       console.log(data);
-      this.order = data;
+      this.order = data['order'];
     });
   }
 

@@ -23,7 +23,7 @@ export class OrdersComponent implements OnInit {
     this.orders = [];
     this.rest.getOrders().subscribe((data: {}) => {
       console.log(data);
-      this.orders = data.data;
+      this.orders = data['orders'];
     });
   }
 
