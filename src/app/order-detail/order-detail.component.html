@@ -1,6 +1,17 @@
-<div *ngIf="order" class="orders">
+<!-- <div *ngIf="order" class="orders">
   <h2>{{order.customer | uppercase}}</h2>
   <div><span>Description: </span>{{order.description}}</div>
   <div><span>Status: </span>{{order.status}}</div>
   <div><span>Update Date: </span>{{order.updated_at | date}}</div>
-</div>
+</div>-->
+
+<div class="card text-center" *ngIf="order">
+    <h2>Order Details</h2>
+    <div class="card-block">
+      <h4 class="card-title">{{order.customer}}</h4>
+      <p class="card-text">
+        {{order.status}}
+      </p>    
+    </div>
+
+  </div>

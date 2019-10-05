@@ -38,4 +38,8 @@ export class OrdersComponent implements OnInit {
       console.log(err);
     })
   }
+
+  getOrderDetail(order){
+    this.router.navigate(['/order-detail/'+order._id]);
+  }
 }
