@@ -1,17 +1,24 @@
-<h2>Order List</h2>
-
-<div>
-  <button (click)="add()">
-    Add
-  </button>
+<div class="container" style="margin-top: 70px;">
+  <h2> Order List</h2>
+  <button class="btn btn-primary" (click)="add()"> Create Order</button>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders; let i=index;">
+        <td class="hidden">{{i+1}}</td>
+        <td>{{order.customer}}</td>
+        <td>{{order.description}}</td>
+        <td>{{order.status}}</td>
+        <td><button class="btn btn-danger" (click)="cancelOrder(order)"> Cancel</button>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-<ul class="orders">
-  <li *ngFor="let o of orders; let i=index;">
-    <a routerLink="/order-detail/{{o._id}}">
-      <span class="badge">{{i+1}}</span> {{o.status}}
-    </a>
-    <button class="delete" title="Cancel Order"
-      (click)="cancelOrder(o._id)">x</button>
-  </li>
-</ul>
