@@ -33,7 +33,7 @@ export class RestService {
   }
 
   cancelOrder(id): Observable<any>{
-    return this.http.post(endpoint +'orders', id).pipe();
+    return this.http.post(endpoint +'orders/'+id+'/cancel', {}).pipe();
   }
 
   addOrder (order): Observable<any> {
