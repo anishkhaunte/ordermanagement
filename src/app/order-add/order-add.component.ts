@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class OrderAddComponent implements OnInit {
   order: any
-  @Input() orderData = { customer:'', description: '', price: 0 };
+  @Input() orderData = { first_name:'', description: '' };
 
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
 
